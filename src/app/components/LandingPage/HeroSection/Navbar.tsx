@@ -23,7 +23,7 @@ export default function Navbar() {
   ]
 
   return (
-    <nav className='relative z-50 w-full' role='navigation' aria-label='Main navigation'>
+    <nav className='relative z-50 w-full pt-8' role='navigation' aria-label='Main navigation'>
       <div className='mx-auto flex max-w-5xl items-center justify-between'>
         <ul className='hidden items-center space-x-8 md:flex' role='list'>
           {navItems.map((item) => (
