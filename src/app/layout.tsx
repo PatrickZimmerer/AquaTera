@@ -16,13 +16,20 @@ export const metadata: Metadata = {
   description: 'Where earth and water meet and wellness grows.',
   openGraph: {
     type: 'website',
+    url: 'https://aquatera.com',
     title: 'Aqua Tera',
     description: 'Where earth and water meet and wellness grows.',
     images: [
       {
-        url: '/metaimage.png',
+        url: 'https://aquatera.com/metaimage.png',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aqua Tera',
+    description: 'Where earth and water meet and wellness grows.',
+    images: ['https://aquatera.com/metaimage.png'],
   },
 }
 
