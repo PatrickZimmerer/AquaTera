@@ -25,6 +25,27 @@
   }
 }
 
+@layer components {
+  .hover-primary-link {
+    @apply relative;
+  }
+
+  .hover-primary-link::after {
+    @apply bg-primary absolute bottom-0 left-0 h-[2px] w-full content-[''];
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .hover-primary-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .active-primary-link {
+    @apply after:bg-primary after:absolute after:block after:h-[2px] after:w-full after:origin-center after:scale-x-100 after:transition after:duration-300 after:content-[''] after:hover:scale-x-100;
+  }
+}
+
 @keyframes levitateX {
   0%,
   100% {
