@@ -1,0 +1,68 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #FDE5D6;
+  --color-secondary: #3E483F;
+
+  --font-dmMono: var(--font-dmMono), sans-serif;
+  --font-ppWatchMedium: 'PPWatch-Medium', sans-serif;
+
+  --breakpoint-xxs: 390px;
+}
+
+@font-face {
+  font-family: 'PPWatch-Medium';
+  src: url('/fonts/PPWatch-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@layer utilities {
+  .side-padding {
+    @apply mx-auto max-w-[90rem] px-6;
+  }
+}
+
+@keyframes levitateX {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(var(--levitate-amplitude-x, -150px));
+  }
+}
+
+.animate-levitateX {
+  animation: levitateX var(--levitate-duration, 6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes levitateY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(var(--levitate-amplitude-y, -150px));
+  }
+}
+
+.animate-levitateY {
+  animation: levitateY var(--levitate-duration, 6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes levitateXY {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(var(--levitate-amplitude-x, -150px), var(--levitate-amplitude-y, -150px));
+  }
+}
+
+.animate-levitateXY {
+  animation: levitateXY var(--levitate-duration, 6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
