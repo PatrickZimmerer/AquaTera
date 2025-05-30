@@ -6,7 +6,7 @@
   --color-primary: #FDE5D6;
   --color-secondary: #3E483F;
 
-  --font-dmMono: var(--font-dmMono), sans-serif;
+  --font-dmSans: var(--font-dmSans), sans-serif;
   --font-ppWatchMedium: 'PPWatch-Medium', sans-serif;
 
   --breakpoint-xxs: 390px;

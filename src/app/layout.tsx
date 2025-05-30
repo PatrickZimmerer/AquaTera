@@ -33,6 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <head/>
       <body className={`${dmSans.variable} font-ppWatchMedium text-white`}>
         <WindowWidthProvider>{children}</WindowWidthProvider>
         <Script
