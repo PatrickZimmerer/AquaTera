@@ -2,6 +2,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer base {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 @theme {
   --color-primary: #FDE5D6;
   --color-secondary: #3E483F;
@@ -46,44 +52,15 @@
   }
 }
 
-@keyframes levitateX {
-  0%,
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
   100% {
-    transform: translateX(0px);
-  }
-  50% {
-    transform: translateX(var(--levitate-amplitude-x, -150px));
+    transform: scale(1.05);
   }
 }
 
-.animate-levitateX {
-  animation: levitateX var(--levitate-duration, 6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes levitateY {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(var(--levitate-amplitude-y, -150px));
-  }
-}
-
-.animate-levitateY {
-  animation: levitateY var(--levitate-duration, 6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes levitateXY {
-  0%,
-  100% {
-    transform: translate(0px, 0px);
-  }
-  50% {
-    transform: translate(var(--levitate-amplitude-x, -150px), var(--levitate-amplitude-y, -150px));
-  }
-}
-
-.animate-levitateXY {
-  animation: levitateXY var(--levitate-duration, 6s) cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.animate-breathe {
+  animation: breathe 10s ease-in-out infinite alternate;
 }
