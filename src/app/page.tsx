@@ -5,6 +5,7 @@ import HeroSection from './components/LandingPage/HeroSection'
 import IntroductionSection from './components/LandingPage/IntroductionSection'
 import AboutSection from './components/LandingPage/AboutSection'
 import ProductsAndServicesSection from './components/LandingPage/ProductsAndServicesSection'
+import ResearchAndDevelopmentSection from './components/LandingPage/ResearchAndDevelopmentSection'
 
 export default function Home() {
   useAOS()
@@ -19,6 +20,8 @@ export default function Home() {
         <AboutSection />
 
         <ProductsAndServicesSection />
+
+        <ResearchAndDevelopmentSection />
       </main>
     </ParallaxProviders>
   )
