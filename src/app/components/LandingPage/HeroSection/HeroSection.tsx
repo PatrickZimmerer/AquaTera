@@ -9,8 +9,19 @@ export default function HeroSection() {
         <Navbar />
 
         <div className='flex flex-1 flex-col items-center justify-center gap-y-8 md:gap-y-12'>
-          <Image src='/assets/logos/aqua-tera-brand-logo.svg' alt='Aqua Tera Logo' width={77} height={59} />
-          <h1 className='text-primary max-w-3xl text-center text-[2.5rem] leading-[100%] tracking-[-0.075rem] md:text-[4.375rem]'>
+          <Image
+            data-aos='fade-in'
+            data-aos-duration='800'
+            src='/assets/logos/aqua-tera-brand-logo.svg'
+            alt='Aqua Tera Logo'
+            width={77}
+            height={59}
+          />
+          <h1
+            data-aos='fade-up'
+            data-aos-duration='800'
+            className='text-primary max-w-3xl text-center text-[2.5rem] leading-[100%] tracking-[-0.075rem] md:text-[4.375rem]'
+          >
             Where <br className='md:hidden' />
             earth <br className='hidden md:block' />
             and water meet <br />

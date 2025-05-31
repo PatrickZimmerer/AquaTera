@@ -24,7 +24,12 @@ export default function Navbar() {
 
   return (
     <nav className='sticky top-0 z-50 w-full pt-8' role='navigation' aria-label='Main navigation'>
-      <ul className='hidden flex-wrap items-center justify-center gap-x-8 gap-y-4 md:flex' role='list'>
+      <ul
+        data-aos='fade-down'
+        data-aos-duration='800'
+        className='hidden flex-wrap items-center justify-center gap-x-8 gap-y-4 md:flex'
+        role='list'
+      >
         {navItems.map((item) => (
           <li key={item.id}>
             <a
