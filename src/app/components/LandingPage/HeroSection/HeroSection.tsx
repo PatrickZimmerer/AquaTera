@@ -7,7 +7,7 @@ import { useWindowWidthContext } from '../../../providers/WindowWidthProvider'
 export default function HeroSection() {
   const { isMobile } = useWindowWidthContext()
   return (
-    <section className='h-dvh w-full overflow-hidden'>
+    <section className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding relative z-10 flex h-full w-full flex-col'>
         <Navbar />
 
@@ -29,6 +29,10 @@ export default function HeroSection() {
         alt='Big Island Background'
         priority
         fill
+        style={{
+          transformOrigin: 'center center',
+          willChange: 'transform',
+        }}
       />
     </section>
   )

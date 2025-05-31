@@ -54,13 +54,16 @@
 
 @keyframes breathe {
   0% {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
   }
   100% {
-    transform: scale(1.05);
+    transform: scale(1.05) translateZ(0);
   }
 }
 
 .animate-breathe {
   animation: breathe 10s ease-in-out infinite alternate;
+  transform-origin: center center;
+  contain: layout;
+  backface-visibility: hidden;
 }
