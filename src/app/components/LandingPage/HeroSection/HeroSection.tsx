@@ -6,6 +6,7 @@ import { useWindowWidthContext } from '../../../providers/WindowWidthProvider'
 
 export default function HeroSection() {
   const { isMobile } = useWindowWidthContext()
+
   return (
     <section className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding relative z-10 flex h-full w-full flex-col'>
@@ -24,7 +25,7 @@ export default function HeroSection() {
       </div>
 
       <Image
-        className='animate-breathe absolute inset-0 z-0 h-dvh w-full object-cover object-[75%_center] md:object-center 2xl:object-fill'
+        className='animate-breathe absolute inset-0 z-0 h-dvh w-full object-cover object-[75%_center] md:object-center'
         src='/assets/images/background/big-island.png'
         alt='Big Island Background'
         priority
