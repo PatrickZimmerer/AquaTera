@@ -3,10 +3,7 @@ import Image from 'next/image'
 
 export default function ResearchAndDevelopmentSection() {
   return (
-    <section
-      id='research'
-      className='text-primary relative h-dvh max-h-[40.375rem] w-full overflow-hidden md:max-h-[80rem]'
-    >
+    <section id='research' className='text-primary relative h-dvh max-h-[80rem] w-full overflow-hidden'>
       <div className='side-padding flex h-full md:items-end'>
         <div
           data-aos={'fade-up'}
@@ -30,26 +27,15 @@ export default function ResearchAndDevelopmentSection() {
       </div>
 
       {/* Mobile Background Image */}
-      <div
-        className='absolute z-0 overflow-hidden md:h-[80rem]'
-        style={{
-          position: 'absolute',
-          top: '0',
-          left: '0',
-          bottom: '0',
-          right: '0',
-        }}
-      >
+      <div className='absolute inset-0 z-0 h-full w-full overflow-hidden'>
         <Image
-          className={`w-full max-w-none object-cover`}
-          loading='lazy'
+          className='block h-full w-full object-cover md:hidden'
           src={'/assets/images/background/cutting-plants-mobile.png'}
           alt='Cutting Plants Background'
-          width={484}
-          height={646}
+          loading='lazy'
+          fill
         />
 
-        {/* Desktop Background Image */}
         <Image
           className='hidden w-full max-w-none object-cover md:block'
           src={'/assets/images/background/cutting-plants-desktop.png'}
@@ -59,16 +45,7 @@ export default function ResearchAndDevelopmentSection() {
         />
 
         {/* Overlay */}
-        <div
-          className='absolute inset-0 bg-[rgba(61,26,10,0.40)]'
-          style={{
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            bottom: '0',
-            right: '0',
-          }}
-        />
+        <div className='absolute inset-0 bg-[rgba(61,26,10,0.40)]' />
       </div>
     </section>
   )
