@@ -9,14 +9,19 @@
 }
 
 @theme {
-  --color-primary: #FDE5D6;
-  --color-secondary: #3E483F;
-  --color-secondary-hover: #FFBF65;
+  --color-primary: #fde5d6;
+  --color-secondary: #3e483f;
+  --color-secondary-hover: #ffbf65;
 
   --font-dmSans: var(--font-dmSans), sans-serif;
   --font-ppWatchMedium: 'PPWatch-Medium', sans-serif;
 
   --breakpoint-xxs: 390px;
+}
+
+/* Add font-feature-settings for DM Sans */
+.font-dmSans {
+  font-feature-settings: 'liga' off;
 }
 
 @font-face {

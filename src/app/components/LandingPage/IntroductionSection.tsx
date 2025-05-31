@@ -5,7 +5,7 @@ export default function IntroductionSection() {
   const { isMobile } = useWindowWidthContext()
 
   return (
-    <section className='relative h-dvh w-full overflow-hidden'>
+    <section className='relative h-dvh max-h-[60rem] w-full overflow-hidden'>
       <div className='side-padding flex h-full flex-col justify-center'>
         <p
           data-aos='fade-in'

@@ -6,9 +6,9 @@ export default function AboutSection() {
   const { isMobile } = useWindowWidthContext()
 
   return (
-    <section id='about' className='text-primary relative h-dvh w-full overflow-hidden'>
+    <section id='about' className='text-primary relative h-dvh max-h-[60rem] w-full overflow-hidden'>
       <div className='side-padding mt-auto flex h-full flex-col'>
-        <div className='z-20 flex h-full max-w-[33.5rem] flex-col justify-end gap-y-4 pb-16 md:mr-44 md:ml-auto md:justify-start md:gap-y-6 md:pt-36'>
+        <div className='z-20 flex h-full max-w-[33.3125rem] flex-col justify-end gap-y-4 pb-16 md:mr-44 md:ml-auto md:justify-start md:gap-y-6 md:pt-36'>
           <h3
             data-aos='fade-down'
             data-aos-duration='800'
@@ -34,7 +34,7 @@ export default function AboutSection() {
       </div>
       {/* Mobile Background Image */}
       <Image
-        className='absolute inset-0 z-0 block h-dvh w-full object-cover md:hidden md:object-center'
+        className='absolute inset-0 z-0 block h-full w-full object-cover md:hidden md:object-center'
         src={'/assets/images/background/purple-plant-mobile.png'}
         alt='Purple Plant Background'
         loading='lazy'
@@ -43,7 +43,7 @@ export default function AboutSection() {
 
       {/* Desktop Background Image */}
       <Image
-        className='absolute inset-0 z-0 hidden h-dvh w-full object-cover md:block md:object-center'
+        className='absolute inset-0 z-0 hidden h-full w-full object-cover md:block md:object-center'
         src={'/assets/images/background/purple-plant-desktop.png'}
         alt='Purple Plant Background'
         loading='lazy'

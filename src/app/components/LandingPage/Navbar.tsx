@@ -35,7 +35,7 @@ export default function Navbar() {
             <a
               href={item.href}
               onClick={(e) => handleSmoothScroll(e, item.id)}
-              className='text-primary hover-primary-link leading-[110%]focus:ring-2 focus:ring-secondary relative text-sm focus:ring-offset-2'
+              className='text-primary hover-primary-link leading-[110%]focus:ring-2 focus:ring-secondary relative text-sm focus:ring-offset-2 2xl:text-base'
               aria-label={`Navigate to ${item.label} section`}
             >
               {item.label}
