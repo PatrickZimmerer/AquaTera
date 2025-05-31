@@ -11,6 +11,7 @@
 @theme {
   --color-primary: #FDE5D6;
   --color-secondary: #3E483F;
+  --color-secondary-hover: #FFBF65;
 
   --font-dmSans: var(--font-dmSans), sans-serif;
   --font-ppWatchMedium: 'PPWatch-Medium', sans-serif;

@@ -12,7 +12,7 @@ export default function IntroductionSection() {
         </p>
       </div>
 
-      {/* Mobile Background */}
+      {/* Mobile Background Image */}
       <div
         className='bg-lightgray absolute inset-0 z-0 h-dvh w-full bg-cover bg-center bg-no-repeat mix-blend-overlay md:hidden'
         style={{
@@ -20,7 +20,7 @@ export default function IntroductionSection() {
         }}
       />
 
-      {/* Desktop Background */}
+      {/* Desktop Background Image */}
       <div
         className='bg-lightgray 2xl:bg-fill absolute inset-0 z-0 hidden h-dvh w-full bg-cover bg-center bg-no-repeat mix-blend-overlay md:block'
         style={{
