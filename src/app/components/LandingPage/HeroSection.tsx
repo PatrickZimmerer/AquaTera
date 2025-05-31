@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
 import Image from 'next/image'
+import Navbar from './Navbar'
 
 export default function HeroSection() {
   return (
@@ -34,7 +34,7 @@ export default function HeroSection() {
       {/* Desktop Background Image */}
       <Image
         className='animate-breathe absolute inset-0 z-0 hidden h-dvh w-full object-cover object-[75%_center] md:block md:object-center'
-        src={'/assets/images/background/big-island.png'}
+        src={'/assets/images/background/big-island-desktop.png'}
         alt='Big Island Background'
         priority
         fill
