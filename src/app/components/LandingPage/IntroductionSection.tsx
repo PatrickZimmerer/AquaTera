@@ -1,10 +1,18 @@
 import React from 'react'
+import { useWindowWidthContext } from '../../providers/WindowWidthProvider'
 
 export default function IntroductionSection() {
+  const { isMobile } = useWindowWidthContext()
+
   return (
     <section className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding flex h-full flex-col justify-center'>
-        <p className='z-20 mx-auto max-w-[68.5rem] text-center text-xl leading-[120%] tracking-[-0.0375rem] md:text-[2.5rem]'>
+        <p
+          data-aos='fade-in'
+          data-aos-duration='1000'
+          data-aos-offset={isMobile ? '200' : '400'}
+          className='z-20 mx-auto max-w-[68.5rem] text-center text-xl leading-[120%] tracking-[-0.0375rem] md:text-[2.5rem]'
+        >
           Nestled in Barmera, along the banks of South Australia&apos;s majestic River Murray, AquaTera is dedicated to
           cultivating harmony between land, science, and self. We proudly offer sustainable, organic medical cannabis
           products, supported by innovative wellness solutions, cutting-edge research, and holistic experiences. At
