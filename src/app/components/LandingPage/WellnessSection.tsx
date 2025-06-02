@@ -26,8 +26,8 @@ export default function WellnessSection() {
       {/* Background Image */}
       <Image
         className='absolute inset-0 z-0 h-full w-full object-cover'
-        src={'/assets/images/background/woman-in-bathtub.png'}
-        alt='Woman in Bathtub Background'
+        src={'/assets/images/background/woman-meditating.png'}
+        alt='Woman Meditating Background'
         loading='lazy'
         fill
       />
