@@ -2,9 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import { TEAM_MEMBERS } from '../../data/team'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
+import { useWindowWidthContext } from '../../providers/WindowWidthProvider'
 
 export default function TeamSection() {
-  const { sectionRef, scrollProgress } = useScrollProgress()
+  const { isMobile } = useWindowWidthContext()
+  const { sectionRef, scrollProgress } = useScrollProgress({
+    startBuffer: isMobile ? 0.6 : 0.25,
+    endBuffer: isMobile ? 0.6 : 0.25,
+  })
 
   const BG_IMAGE_WIDTH = 2381
   const BG_IMAGE_HEIGHT = 1060
@@ -60,7 +65,6 @@ export default function TeamSection() {
           style={{
             top: '45%',
             left: BG_IMAGE_WIDTH * -0.1 + 'px',
-            transform: `translateX(${scrollProgress}%)`,
           }}
         />
 

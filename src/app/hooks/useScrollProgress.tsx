@@ -1,7 +1,13 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 
-export const useScrollProgress = () => {
+interface UseScrollProgressOptions {
+  startBuffer?: number // Percentage of section that needs to enter before animation starts (default: 25%)
+  endBuffer?: number // Percentage of section that needs to leave before animation completes (default: 25%)
+}
+
+export const useScrollProgress = (options: UseScrollProgressOptions = {}) => {
+  const { startBuffer = 0.25, endBuffer = 0.25 } = options
   const sectionRef = useRef<HTMLElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -13,17 +19,17 @@ export const useScrollProgress = () => {
       const windowHeight = window.innerHeight
       const sectionHeight = rect.height
 
-      // Define animation points with 25% buffers
-      // Start when 25% of section has entered viewport
-      // Complete when 25% of section has left viewport
-      const startPoint = windowHeight - 0.25 * sectionHeight // Section top when 25% has entered
-      const endPoint = -(0.25 * sectionHeight) // Section top when 25% has left viewport
+      // Define animation points with custom buffers
+      // Start when specified % of section has entered viewport
+      // Complete when specified % of section has left viewport
+      const startPoint = windowHeight - startBuffer * sectionHeight // Section top when start% has entered
+      const endPoint = -(endBuffer * sectionHeight) // Section top when end% has left viewport
       const sectionTop = rect.top
 
       let progress = 0
 
       if (sectionTop <= endPoint) {
-        // 25% of section has left viewport => 100% progress
+        // Specified % of section has left viewport => 100% progress
         progress = 1
       } else if (sectionTop < startPoint) {
         // Section is in the animation range - calculate linear progress
@@ -44,7 +50,7 @@ export const useScrollProgress = () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleScroll)
     }
-  }, [])
+  }, [startBuffer, endBuffer])
 
   return {
     sectionRef,

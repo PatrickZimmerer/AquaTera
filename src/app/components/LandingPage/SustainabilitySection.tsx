@@ -1,9 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
+import { useWindowWidthContext } from '../../providers/WindowWidthProvider'
 
 export default function SustainabilitySection() {
-  const { sectionRef, scrollProgress } = useScrollProgress()
+  const { isMobile } = useWindowWidthContext()
+  const { sectionRef, scrollProgress } = useScrollProgress({
+    startBuffer: isMobile ? 0.5 : 0.25,
+    endBuffer: isMobile ? 0.5 : 0.25,
+  })
 
   const BG_IMAGE_WIDTH = 1523
   const BG_IMAGE_HEIGHT = 678
