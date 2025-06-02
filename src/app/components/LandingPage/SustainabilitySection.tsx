@@ -1,40 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 
 export default function SustainabilitySection() {
-  const sectionRef = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const { sectionRef, scrollProgress } = useScrollProgress()
 
   const BG_IMAGE_WIDTH = 1523
   const BG_IMAGE_HEIGHT = 678
   const IMAGE_ASPECT_RATIO = BG_IMAGE_HEIGHT / BG_IMAGE_WIDTH // 0.445
-
-  useEffect(() => {
-    const currentSection = sectionRef.current
-
-    if (!currentSection) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-          } else {
-            setIsVisible(false)
-          }
-        })
-      },
-      { threshold: 0.3 },
-    )
-
-    observer.observe(currentSection)
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection)
-      }
-    }
-  }, [])
 
   return (
     <section ref={sectionRef} id='sustainability' className='relative h-dvh w-full overflow-hidden'>
@@ -86,8 +59,7 @@ export default function SustainabilitySection() {
             left: BG_IMAGE_WIDTH * -0.1 + 'px',
             width: BG_IMAGE_WIDTH + 'px',
             height: BG_IMAGE_HEIGHT + 'px',
-            transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
-            transition: 'transform 6s ease-in-out',
+            transform: `translateX(${scrollProgress}%)`,
           }}
         />
       </div>
@@ -106,8 +78,7 @@ export default function SustainabilitySection() {
         className='bg-primary absolute top-1/4 left-0 z-10 hidden w-screen md:block'
         style={{
           height: `calc(100vw * ${IMAGE_ASPECT_RATIO})`,
-          transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
-          transition: 'transform 6s ease-in-out',
+          transform: `translateX(${scrollProgress}%)`,
         }}
       />
     </section>

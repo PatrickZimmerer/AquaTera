@@ -1,40 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { TEAM_MEMBERS } from '../../data/team'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 
 export default function TeamSection() {
-  const sectionRef = useRef<HTMLDivElement | null>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const { sectionRef, scrollProgress } = useScrollProgress()
 
   const BG_IMAGE_WIDTH = 2381
   const BG_IMAGE_HEIGHT = 1060
-
-  useEffect(() => {
-    const currentSection = sectionRef.current
-
-    if (!currentSection) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-          } else {
-            setIsVisible(false)
-          }
-        })
-      },
-      { threshold: 0.3 },
-    )
-
-    observer.observe(currentSection)
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection)
-      }
-    }
-  }, [])
 
   return (
     <section ref={sectionRef} id='team' className='bg-primary-dark relative h-dvh w-full overflow-hidden'>
@@ -94,8 +67,7 @@ export default function TeamSection() {
             left: BG_IMAGE_WIDTH * -0.1 + 'px',
             width: BG_IMAGE_WIDTH + 'px',
             height: BG_IMAGE_HEIGHT + 'px',
-            transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
-            transition: 'transform 6s ease-in-out',
+            transform: `translateX(${scrollProgress}%)`,
           }}
         />
       </div>
@@ -113,8 +85,7 @@ export default function TeamSection() {
       <div
         className='bg-primary-dark absolute top-[10%] left-0 z-10 hidden h-dvh w-screen md:block'
         style={{
-          transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
-          transition: 'transform 6s ease-in-out',
+          transform: `translateX(${scrollProgress}%)`,
         }}
       />
     </section>
