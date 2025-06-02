@@ -8,6 +8,7 @@ import ProductsAndServicesSection from './components/LandingPage/ProductsAndServ
 import ResearchAndDevelopmentSection from './components/LandingPage/ResearchAndDevelopmentSection'
 import SustainabilitySection from './components/LandingPage/SustainabilitySection'
 import WellnessSection from './components/LandingPage/WellnessSection'
+import TeamSection from './components/LandingPage/TeamSection'
 
 export default function Home() {
   useAOS()
@@ -28,6 +29,8 @@ export default function Home() {
         <SustainabilitySection />
 
         <WellnessSection />
+
+        <TeamSection />
       </main>
     </ParallaxProviders>
   )
