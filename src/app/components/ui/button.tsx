@@ -11,7 +11,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, as
   return (
     <Comp
       className={cn(
-        'focus-visible:ring-ring ring-offset-background inline-flex cursor-pointer items-center justify-center rounded-md text-base font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
+        'focus-visible:ring-ring ring-offset-background bg-secondary text-primary ring-secondary inline-flex cursor-pointer items-center justify-center rounded-md text-base font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50',
         className,
       )}
       ref={ref}

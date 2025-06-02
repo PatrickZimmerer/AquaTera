@@ -1,17 +1,7 @@
 import React from 'react'
+import { handleSmoothScroll } from '../../utility/utils'
 
 export default function Navbar() {
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault()
-    const targetElement = document.getElementById(targetId)
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      })
-    }
-  }
-
   const navItems = [
     { href: '#about', label: 'About Aquatera', id: 'about' },
     { href: '#products', label: 'Products & Services', id: 'products' },

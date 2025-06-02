@@ -8,7 +8,6 @@ export default function TeamSection() {
 
   const BG_IMAGE_WIDTH = 2381
   const BG_IMAGE_HEIGHT = 1060
-  const IMAGE_ASPECT_RATIO = BG_IMAGE_HEIGHT / BG_IMAGE_WIDTH
 
   useEffect(() => {
     const currentSection = sectionRef.current
@@ -112,9 +111,8 @@ export default function TeamSection() {
 
       {/* Desktop Overlay */}
       <div
-        className='bg-primary-dark absolute top-[10%] left-0 z-10 hidden w-screen md:block'
+        className='bg-primary-dark absolute top-[10%] left-0 z-10 hidden h-dvh w-screen md:block'
         style={{
-          height: `calc(100vw * ${IMAGE_ASPECT_RATIO})`,
           transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
           transition: 'transform 6s ease-in-out',
         }}
