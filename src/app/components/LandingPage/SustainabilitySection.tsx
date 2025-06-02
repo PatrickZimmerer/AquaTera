@@ -1,21 +1,51 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 export default function SustainabilitySection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
   const BG_IMAGE_WIDTH = 1523
   const BG_IMAGE_HEIGHT = 678
 
+  useEffect(() => {
+    const currentSection = sectionRef.current
+
+    if (!currentSection) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          } else {
+            setIsVisible(false)
+          }
+        })
+      },
+      { threshold: 0.3 },
+    )
+
+    observer.observe(currentSection)
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection)
+      }
+    }
+  }, [])
+
   return (
-    <section id='sustainability' className='relative h-dvh w-full overflow-hidden'>
+    <section ref={sectionRef} id='sustainability' className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding relative flex h-full flex-col justify-center'>
         <div className='mx-auto flex w-full max-w-[66rem] flex-col items-center gap-y-8'>
           <p
             data-aos='fade-right'
             className='z-20 max-w-[41rem] text-center leading-[120%] tracking-[-0.03rem] md:self-start md:text-start md:text-2xl md:tracking-[0.045rem]'
           >
-            The spirit of the River Murray flows through our approach to sustainability. AquaTera’s organic cultivation
-            practices incorporate regenerative agriculture, renewable energy, precision irrigation, and advanced
-            AI-driven systems.
+            The spirit of the River Murray flows through our approach to sustainability. AquaTera&apos;s organic
+            cultivation practices incorporate regenerative agriculture, renewable energy, precision irrigation, and
+            advanced AI-driven systems.
           </p>
 
           <h3
@@ -46,6 +76,19 @@ export default function SustainabilitySection() {
             left: BG_IMAGE_WIDTH * -0.1 + 'px',
           }}
         />
+
+        {/* Mobile Overlay */}
+        <div
+          className='bg-primary absolute z-10 md:hidden'
+          style={{
+            top: '45%',
+            left: BG_IMAGE_WIDTH * -0.1 + 'px',
+            width: BG_IMAGE_WIDTH + 'px',
+            height: BG_IMAGE_HEIGHT + 'px',
+            transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
+            transition: 'transform 6s ease-in-out',
+          }}
+        />
       </div>
 
       {/* Desktop Background Image */}
@@ -55,6 +98,16 @@ export default function SustainabilitySection() {
         width={BG_IMAGE_WIDTH}
         height={BG_IMAGE_HEIGHT}
         className='absolute top-1/4 left-0 z-0 hidden w-screen max-w-none object-cover md:block'
+      />
+
+      {/* Desktop Overlay */}
+      <div
+        className='bg-primary absolute top-1/4 left-0 z-10 hidden w-screen md:block'
+        style={{
+          height: BG_IMAGE_HEIGHT + 'px',
+          transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
+          transition: 'transform 6s ease-in-out',
+        }}
       />
     </section>
   )
