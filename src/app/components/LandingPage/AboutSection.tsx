@@ -40,6 +40,9 @@ export default function AboutSection() {
         loading='lazy'
         fill
       />
+
+      {/* Overlay */}
+      <div className='absolute inset-0 bg-[rgba(61,26,10,0.40)]' />
     </section>
   )
 }

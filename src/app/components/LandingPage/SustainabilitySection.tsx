@@ -6,7 +6,7 @@ export default function SustainabilitySection() {
   const BG_IMAGE_HEIGHT = 678
 
   return (
-    <section className='relative h-dvh w-full overflow-hidden'>
+    <section id='sustainability' className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding relative flex h-full flex-col justify-center'>
         <div className='mx-auto flex w-full max-w-[66rem] flex-col items-center gap-y-8'>
           <p
@@ -29,7 +29,7 @@ export default function SustainabilitySection() {
             data-aos='fade-left'
             className='z-20 max-w-[41rem] text-center leading-[120%] tracking-[-0.03rem] md:self-end md:text-start md:text-2xl md:tracking-[0.045rem]'
           >
-            Our responsibility extends beyond our products; we actively protect the ecological integrity of the
+            Our responsibility extends beyond our products, we actively protect the ecological integrity of the
             Riverland, ensuring long-term sustainability and resilience for future generations.
           </p>
         </div>
