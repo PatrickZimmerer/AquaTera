@@ -7,6 +7,7 @@ export default function SustainabilitySection() {
 
   const BG_IMAGE_WIDTH = 1523
   const BG_IMAGE_HEIGHT = 678
+  const IMAGE_ASPECT_RATIO = BG_IMAGE_HEIGHT / BG_IMAGE_WIDTH // 0.445
 
   useEffect(() => {
     const currentSection = sectionRef.current
@@ -104,7 +105,7 @@ export default function SustainabilitySection() {
       <div
         className='bg-primary absolute top-1/4 left-0 z-10 hidden w-screen md:block'
         style={{
-          height: BG_IMAGE_HEIGHT + 'px',
+          height: `calc(100vw * ${IMAGE_ASPECT_RATIO})`,
           transform: isVisible ? 'translateX(100%)' : 'translateX(0%)',
           transition: 'transform 6s ease-in-out',
         }}
