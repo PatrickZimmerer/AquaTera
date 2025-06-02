@@ -10,7 +10,11 @@ export default function TeamSection() {
   const BG_IMAGE_HEIGHT = 1060
 
   return (
-    <section ref={sectionRef} id='team' className='bg-primary-dark relative h-dvh w-full overflow-hidden'>
+    <section
+      ref={sectionRef}
+      id='team'
+      className='bg-primary-dark relative h-fit min-h-dvh w-full overflow-hidden py-16'
+    >
       <div className='side-padding relative flex h-full flex-col justify-center'>
         <div className='md:gap mx-auto flex w-full flex-col items-center gap-y-12'>
           <h3
@@ -56,6 +60,7 @@ export default function TeamSection() {
           style={{
             top: '45%',
             left: BG_IMAGE_WIDTH * -0.1 + 'px',
+            transform: `translateX(${scrollProgress}%)`,
           }}
         />
 
