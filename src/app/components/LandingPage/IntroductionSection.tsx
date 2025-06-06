@@ -17,7 +17,7 @@ export default function IntroductionSection() {
   })
 
   return (
-    <section ref={sectionRef} className='relative h-dvh max-h-[60rem] w-full overflow-hidden'>
+    <section ref={sectionRef} className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding flex h-full flex-col justify-center'>
         <div className='z-20 mx-auto max-w-[68.5rem] text-center text-xl leading-[120%] tracking-[-0.0375rem] md:text-[2.5rem]'>
           {sentences.map((sentence, index) => (
