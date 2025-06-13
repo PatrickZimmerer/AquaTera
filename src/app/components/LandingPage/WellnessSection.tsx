@@ -11,15 +11,24 @@ export default function WellnessSection() {
           className='z-20 flex h-full max-w-[33.3125rem] flex-col justify-end gap-y-4 pb-16 md:mr-44 md:ml-auto md:justify-start md:gap-y-6 md:pt-36'
         >
           <h3 className='text-[1.625rem] leading-[100%] tracking-[-0.04875rem] md:text-[2.5rem] md:tracking-[-0.075rem] 2xl:text-[3.5rem]'>
+            Future <br />
             Wellness Retreat
           </h3>
 
-          <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
-            Our AquaTera wellness retreat is more than just a destination, it’s a sanctuary. Set within ancient
-            bushland, our off-grid eco-pods and luxurious wellness facilities offer guests an opportunity to reconnect,
-            reset, and rediscover natural healing. Through personalized wellness programs, yoga, meditation, educational
-            workshops, and therapeutic treatments, guests experience the profound restorative power of nature.
-          </p>
+          <div className='font-dmSans flex flex-col gap-y-6'>
+            <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
+              Planned as a future extension of the Aquatera ecosystem, our wellness retreat will offer a unique
+              sanctuary for integrated healing and education. Nestled within ancient bushland, the retreat will feature
+              off-grid eco-pods and thoughtfully designed wellness facilities—providing space for guests to reconnect
+              with nature and themselves.
+            </p>
+
+            <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
+              The retreat will embody Aquatera’s vision of holistic, evidence-aligned wellbeing. Designed to complement
+              our medical and research initiatives, it will serve as a space where science, nature, and human experience
+              come together.
+            </p>
+          </div>
         </div>
       </div>
 
