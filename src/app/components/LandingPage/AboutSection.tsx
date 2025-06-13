@@ -14,13 +14,21 @@ export default function AboutSection() {
             About <br /> AquaTera
           </h3>
 
-          <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
-            AquaTera is not just a cannabis company, we are stewards of an ancient landscape, honouring the deep natural
-            rhythms and unseen energies of the Riverland. Driven by the belief that wellness should be grounded, not
-            commodified, we cultivate premium, small-batch cannabis using organic practices and advanced sustainable
-            technologies. Our facilities are thoughtfully integrated with the pristine natural surroundings, ensuring
-            minimal ecological impact and maximum restorative potential.
-          </p>
+          <div className='flex flex-col gap-y-4'>
+            <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
+              Aquatera is more than a cannabis company—we are stewards of an ancient landscape, cultivating harmony
+              between nature, science, and self.
+            </p>
+            <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
+              We produce premium, small-batch medical cannabis through organic cultivation, AI-assisted environmental
+              control, and data-led agronomy. Our regenerative infrastructure is engineered to minimise ecological
+              impact while maximising plant integrity, therapeutic efficacy, and long-term sustainability.
+            </p>
+            <p className='font-dmSans text-[0.9375rem] leading-[140%] md:text-lg'>
+              At Aquatera, we believe the path to wellness lies in the fusion of holistic connection and modern
+              precision—where nature guides, science advances, and meaningful innovation grows from the ground up.
+            </p>
+          </div>
         </div>
       </div>
       {/* Mobile Background Image */}
