@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 import { useWindowWidthContext } from '../../providers/WindowWidthProvider'
+import { Parallax } from 'react-scroll-parallax'
 
 export default function SustainabilitySection() {
   const { isMobile } = useWindowWidthContext()
@@ -17,15 +18,17 @@ export default function SustainabilitySection() {
   return (
     <section ref={sectionRef} id='sustainability' className='relative h-fit w-full overflow-hidden py-40 md:py-60'>
       <div className='side-padding relative flex h-full flex-col justify-center'>
-        <div className='mx-auto flex w-full max-w-[66rem] flex-col items-center gap-y-8'>
-          <p
-            data-aos='fade-right'
-            className='z-20 max-w-[41rem] text-center leading-[120%] tracking-[-0.03rem] md:self-start md:text-start md:text-2xl md:tracking-[0.045rem]'
-          >
-            The spirit of the River Murray flows through our approach to sustainability. AquaTera&apos;s organic
-            cultivation practices incorporate regenerative agriculture, renewable energy, precision irrigation, and
-            advanced AI-driven systems.
-          </p>
+        <div className='mx-auto flex w-full max-w-[66rem] flex-col items-center gap-y-16'>
+          <Parallax className='z-20 max-w-[41rem] md:self-start md:text-start' speed={5}>
+            <p
+              data-aos='fade-right'
+              className='text-center leading-[120%] tracking-[-0.03rem] md:text-2xl md:tracking-[0.045rem]'
+            >
+              The spirit of the River Murray flows through our approach to sustainability. AquaTera&apos;s organic
+              cultivation practices incorporate regenerative agriculture, renewable energy, precision irrigation, and
+              advanced AI-driven systems.
+            </p>
+          </Parallax>
 
           <h3
             data-aos='fade-in'
@@ -34,13 +37,15 @@ export default function SustainabilitySection() {
             Sustainability
           </h3>
 
-          <p
-            data-aos='fade-left'
-            className='z-20 max-w-[41rem] text-center leading-[120%] tracking-[-0.03rem] md:self-end md:text-start md:text-2xl md:tracking-[0.045rem]'
-          >
-            Our responsibility extends beyond our products, we actively protect the ecological integrity of the
-            Riverland, ensuring long-term sustainability and resilience for future generations.
-          </p>
+          <Parallax className='z-20 max-w-[41rem] md:self-end md:text-start' speed={5}>
+            <p
+              data-aos='fade-left'
+              className='text-center leading-[120%] tracking-[-0.03rem] md:text-2xl md:tracking-[0.045rem]'
+            >
+              Our responsibility extends beyond our products, we actively protect the ecological integrity of the
+              Riverland, ensuring long-term sustainability and resilience for future generations.
+            </p>
+          </Parallax>
         </div>
 
         {/* Mobile Background Image */}
