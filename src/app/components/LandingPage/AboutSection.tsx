@@ -1,36 +1,39 @@
 import React from 'react'
 import Image from 'next/image'
+import { Parallax } from 'react-scroll-parallax'
 
 export default function AboutSection() {
   return (
     <section id='about' className='text-primary relative h-dvh max-h-[80rem] w-full overflow-hidden'>
       <div className='side-padding mt-auto flex h-full flex-col'>
-        <div className='z-20 flex h-full max-w-[33.3125rem] flex-col justify-end gap-y-4 pb-16 md:mr-44 md:ml-auto md:justify-start md:gap-y-6 md:pt-36'>
-          <h3
-            data-aos='fade-left'
-            className='text-[1.625rem] leading-[100%] tracking-[-0.04875rem] md:text-[2.5rem] md:tracking-[-0.075rem] 2xl:text-[3.5rem]'
-          >
-            About <br /> AquaTera
-          </h3>
+        <Parallax className='z-20' speed={20}>
+          <div className='flex h-full max-w-[33.3125rem] flex-col justify-end gap-y-4 pb-16 md:mr-44 md:ml-auto md:justify-start md:gap-y-6 md:pt-36'>
+            <h3
+              data-aos='fade-left'
+              className='text-[1.625rem] leading-[100%] tracking-[-0.04875rem] md:text-[2.5rem] md:tracking-[-0.075rem] 2xl:text-[3.5rem]'
+            >
+              About <br /> AquaTera
+            </h3>
 
-          <div className='font-dmSans flex flex-col gap-y-6'>
-            <p data-aos='fade-left' className='text-[0.9375rem] leading-[140%] md:text-lg'>
-              Aquatera is more than a cannabis company—we are stewards of an ancient landscape, cultivating harmony
-              between nature, science, and self.
-            </p>
+            <div className='font-dmSans flex flex-col gap-y-6'>
+              <p data-aos='fade-left' className='text-[0.9375rem] leading-[140%] md:text-lg'>
+                Aquatera is more than a cannabis company—we are stewards of an ancient landscape, cultivating harmony
+                between nature, science, and self.
+              </p>
 
-            <p data-aos='fade-left' className='text-[0.9375rem] leading-[140%] md:text-lg'>
-              We produce premium, small-batch medical cannabis through organic cultivation, AI-assisted environmental
-              control, and data-led agronomy. Our regenerative infrastructure is engineered to minimise ecological
-              impact while maximising plant integrity, therapeutic efficacy, and long-term sustainability.
-            </p>
+              <p data-aos='fade-left' className='text-[0.9375rem] leading-[140%] md:text-lg'>
+                We produce premium, small-batch medical cannabis through organic cultivation, AI-assisted environmental
+                control, and data-led agronomy. Our regenerative infrastructure is engineered to minimise ecological
+                impact while maximising plant integrity, therapeutic efficacy, and long-term sustainability.
+              </p>
 
-            <p data-aos='fade-left' className='text-[0.9375rem] leading-[140%] md:text-lg'>
-              At Aquatera, we believe the path to wellness lies in the fusion of holistic connection and modern
-              precision—where nature guides, science advances, and meaningful innovation grows from the ground up.
-            </p>
+              <p data-aos='fade-left' className='text-[0.9375rem] leading-[140%] md:text-lg'>
+                At Aquatera, we believe the path to wellness lies in the fusion of holistic connection and modern
+                precision—where nature guides, science advances, and meaningful innovation grows from the ground up.
+              </p>
+            </div>
           </div>
-        </div>
+        </Parallax>
       </div>
       {/* Mobile Background Image */}
       <Image

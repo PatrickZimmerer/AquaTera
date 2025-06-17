@@ -7,7 +7,6 @@ export default function HeroSection() {
     <section className='relative h-dvh w-full overflow-hidden'>
       <div className='side-padding relative z-10 flex h-full w-full flex-col'>
         <Navbar />
-
         <div className='flex flex-1 flex-col items-center justify-center gap-y-8 md:gap-y-12'>
           <Image
             data-aos='fade-in'
