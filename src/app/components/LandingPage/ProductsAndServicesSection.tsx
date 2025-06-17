@@ -3,44 +3,49 @@ import Image from 'next/image'
 
 export default function ProductsAndServicesSection() {
   return (
-    <section id='products' className='h-[42rem] w-full overflow-hidden md:h-[60rem]'>
-      <div className='side-padding relative mt-auto flex h-full flex-col'>
-        <div
-          data-aos={'fade-right'}
-          data-aos-offset='200'
-          className='z-20 mt-16 flex h-full max-w-[33.5rem] flex-col gap-y-4 md:mt-40 md:ml-32'
-        >
-          <h3 className='text-[1.625rem] leading-[100%] tracking-[-0.04875rem] md:text-[2.5rem] md:tracking-[-0.075rem] 2xl:text-[3.5rem]'>
+    <section id='products' className='relative w-full overflow-hidden max-md:min-h-dvh max-md:pb-[30rem] md:h-[65rem]'>
+      <div className='side-padding mt-auto flex h-full flex-col'>
+        <div className='text-primary z-20 mt-16 flex h-full max-w-[33.5rem] flex-col gap-y-4 md:mt-40 md:ml-32'>
+          <h3
+            data-aos='fade-right'
+            className='text-[1.625rem] leading-[100%] tracking-[-0.04875rem] md:text-[2.5rem] md:tracking-[-0.075rem] 2xl:text-[3.5rem]'
+          >
             Products <br />
             and Services
           </h3>
 
-          <p className='font-dmSans max-w-[19.5rem] text-[0.9375rem] leading-[140%] md:max-w-[33.3125rem] md:text-lg'>
-            At AquaTera, we craft a diverse range of premium medical cannabis products, each rooted deeply in care. Our
-            meticulously developed medicinal formulations, specialized pet care products, and luxurious organic cosmetic
-            ranges are created through close collaboration with Australia’s leading universities and industry
-            innovators. Every AquaTera product embodies our dedication to quality, responsibility, and authentic
-            wellness.
+          <p
+            data-aos='fade-right'
+            className='font-dmSans max-w-[19.5rem] text-[0.9375rem] leading-[140%] md:max-w-[34rem] md:text-lg'
+          >
+            At Aquatera, we develop a diverse range of high-integrity medical cannabis products designed to support
+            wellbeing. Each formulation is the result of rigorous research, organic cultivation, and precision
+            extraction—anchored in our partnerships with leading Australian universities and biotechnology partners.
+          </p>
+
+          <p
+            data-aos='fade-right'
+            className='font-dmSans max-w-[19.5rem] text-[0.9375rem] leading-[140%] md:max-w-[34rem] md:text-lg'
+          >
+            Our product pipeline includes evidence-led medicinal cannabis formulations and novel delivery systems. Every
+            product reflects our commitment to therapeutic efficacy, natural integrity, and sustainable innovation.
           </p>
         </div>
+
         <Image
-          data-aos='fade-left'
-          data-aos-offset='400'
-          className='absolute right-0 bottom-0 md:hidden'
-          src={'/assets/images/background/aqua-tera-jar-mobile.png'}
-          alt='Aqua Tera Jar'
-          width={371}
-          height={427}
+          className='block h-full w-full object-cover object-bottom md:hidden'
+          src={'/assets/images/background/products-background-mobile.png'}
+          alt='Products and Services Background'
+          loading='lazy'
+          fill
         />
 
         <Image
-          data-aos='fade-left'
-          data-aos-offset='620'
-          className='absolute bottom-16 left-[30rem] hidden md:block'
-          src={'/assets/images/background/aqua-tera-jar-desktop.png'}
-          alt='Aqua Tera Jar'
-          width={1122}
-          height={842}
+          className='hidden w-full max-w-none object-cover md:block'
+          src={'/assets/images/background/products-background-desktop.png'}
+          alt='Products and Services Background'
+          loading='lazy'
+          fill
         />
       </div>
     </section>
