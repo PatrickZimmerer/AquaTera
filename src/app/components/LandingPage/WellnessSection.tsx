@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function WellnessSection() {
   return (
-    <section id='wellness' className='text-primary relative h-dvh max-h-[80rem] w-full overflow-hidden'>
+    <section id='wellness' className='text-primary relative h-fit w-full overflow-hidden pt-24 pb-48 md:max-h-[80rem]'>
       <div className='side-padding mt-auto flex h-full flex-col'>
         <div
           data-aos={'fade-left'}
@@ -34,8 +34,16 @@ export default function WellnessSection() {
 
       {/* Background Image */}
       <Image
-        className='absolute inset-0 z-0 h-full w-full object-cover'
-        src={'/assets/images/background/woman-meditating.png'}
+        className='absolute inset-0 z-0 h-full w-full object-cover max-lg:hidden'
+        src={'/assets/images/background/woman-meditating-desktop.png'}
+        alt='Woman Meditating Background'
+        loading='lazy'
+        fill
+      />
+
+      <Image
+        className='absolute inset-0 z-0 h-full w-full object-cover lg:hidden'
+        src={'/assets/images/background/woman-meditating-mobile.png'}
         alt='Woman Meditating Background'
         loading='lazy'
         fill

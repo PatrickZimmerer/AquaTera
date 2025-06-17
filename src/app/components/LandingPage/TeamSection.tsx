@@ -18,9 +18,9 @@ export default function TeamSection() {
     <section
       ref={sectionRef}
       id='team'
-      className='bg-primary-dark relative h-fit min-h-dvh w-full overflow-hidden py-16'
+      className='bg-primary-dark relative flex h-fit w-full flex-col overflow-hidden py-16 max-md:min-h-dvh md:py-80'
     >
-      <div className='side-padding relative flex h-full flex-col justify-center'>
+      <div className='side-padding relative flex h-full flex-1 flex-col justify-center'>
         <div className='md:gap mx-auto flex w-full flex-col items-center gap-y-12'>
           <h3
             data-aos='fade-in'
@@ -30,8 +30,10 @@ export default function TeamSection() {
           </h3>
 
           <ul className='z-20 grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2 lg:grid-cols-4'>
-            {TEAM_MEMBERS.map((member) => (
+            {TEAM_MEMBERS.map((member, index) => (
               <li
+                data-aos='fade-up'
+                data-aos-delay={isMobile ? 0 : index * 200}
                 key={member.name + member.desctiption}
                 className='flex flex-col items-center justify-center gap-y-6 text-center'
               >
