@@ -1,7 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
+import { useWindowWidthContext } from '../../providers/WindowWidthProvider'
 
 export default function ResearchAndDevelopmentSection() {
+  const { isMobile } = useWindowWidthContext()
+
   return (
     <section id='research' className='text-primary relative max-h-[80rem] w-full overflow-hidden max-md:min-h-dvh'>
       <div className='side-padding flex h-full min-h-full flex-col justify-between gap-y-24'>
@@ -23,7 +26,7 @@ export default function ResearchAndDevelopmentSection() {
         </div>
 
         <ul className='max-lg: z-20 flex flex-col gap-y-6 pb-12 max-lg:max-w-[33.3125rem] md:ml-44 md:pb-20 lg:mx-32 lg:flex-row lg:justify-between lg:gap-x-8 lg:pb-32'>
-          <li className='flex flex-col gap-y-4'>
+          <li data-aos='fade-up' className='flex flex-col gap-y-4'>
             <h4 className='text-2xl leading-[100%] tracking-[-3%]'>Phase 1</h4>
 
             <p className='font-dmSans text-[0.9375rem] leading-[140%]'>
@@ -32,7 +35,7 @@ export default function ResearchAndDevelopmentSection() {
             </p>
           </li>
 
-          <li className='flex flex-col gap-y-4'>
+          <li data-aos='fade-up' data-aos-delay={isMobile ? 0 : 200} className='flex flex-col gap-y-4'>
             <h4 className='text-2xl leading-[100%] tracking-[-3%]'>Phase 2</h4>
 
             <p className='font-dmSans text-[0.9375rem] leading-[140%]'>
@@ -41,7 +44,7 @@ export default function ResearchAndDevelopmentSection() {
             </p>
           </li>
 
-          <li className='flex flex-col gap-y-4'>
+          <li data-aos='fade-up' data-aos-delay={isMobile ? 0 : 400} className='flex flex-col gap-y-4'>
             <h4 className='text-2xl leading-[100%] tracking-[-3%]'>Phase 3</h4>
 
             <p className='font-dmSans text-[0.9375rem] leading-[140%]'>
@@ -50,7 +53,7 @@ export default function ResearchAndDevelopmentSection() {
             </p>
           </li>
 
-          <li className='flex flex-col gap-y-4'>
+          <li data-aos='fade-up' data-aos-delay={isMobile ? 0 : 600} className='flex flex-col gap-y-4'>
             <h4 className='text-2xl leading-[100%] tracking-[-3%]'>All phases</h4>
 
             <p className='font-dmSans text-[0.9375rem] leading-[140%]'>
