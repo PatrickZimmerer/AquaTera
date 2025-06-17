@@ -15,7 +15,11 @@ export default function SustainabilitySection() {
   const IMAGE_ASPECT_RATIO = BG_IMAGE_HEIGHT / BG_IMAGE_WIDTH // 0.445
 
   return (
-    <section ref={sectionRef} id='sustainability' className='relative h-dvh w-full overflow-hidden'>
+    <section
+      ref={sectionRef}
+      id='sustainability'
+      className='relative h-fit w-full overflow-hidden py-16 max-md:min-h-dvh md:py-60'
+    >
       <div className='side-padding relative flex h-full flex-col justify-center'>
         <div className='mx-auto flex w-full max-w-[66rem] flex-col items-center gap-y-8'>
           <p

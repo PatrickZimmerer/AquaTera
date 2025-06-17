@@ -18,7 +18,7 @@ export default function TeamSection() {
     <section
       ref={sectionRef}
       id='team'
-      className='bg-primary-dark relative flex h-fit w-full flex-col overflow-hidden py-16 max-md:min-h-dvh md:py-80'
+      className='bg-primary-dark relative flex h-fit w-full flex-col overflow-hidden py-16 max-md:min-h-dvh md:py-72'
     >
       <div className='side-padding relative flex h-full flex-1 flex-col justify-center'>
         <div className='md:gap mx-auto flex w-full flex-col items-center gap-y-12'>
